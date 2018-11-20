@@ -13,7 +13,7 @@ class PriceList(private val constants: IndexedSeq[BigDecimal],
                     if (h <= constants.length) {
                         constants(h - 1)
                     } else {
-                        current.multiply(multiplier)
+                        current multiply multiplier
                     }
                 p(h + 1, sum add curr, curr)
             } else {

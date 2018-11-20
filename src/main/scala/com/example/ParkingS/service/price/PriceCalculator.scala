@@ -4,13 +4,13 @@ import java.math.BigDecimal
 import java.time.Duration
 
 import com.example.ParkingS.model.Ticket
-import com.example.ParkingS.repository.CurrencyRepository
+import com.example.ParkingS.repository.CurrencyFakeRepository
 import com.example.ParkingS.service.currency.CurrencyExchanger
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component
-class PriceCalculator @Autowired()(currencyRepository: CurrencyRepository) {
+class PriceCalculator @Autowired()(currencyRepository: CurrencyFakeRepository) {
     def calculate(ticket: Ticket): BigDecimal = {
         val hours = calculateHours(ticket)
         val priceList =

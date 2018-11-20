@@ -4,7 +4,7 @@ import java.time.LocalDateTime
 
 import com.example.ParkingS.exceptions.{IncorrectBeginParkingRequestException, _}
 import com.example.ParkingS.model.Ticket
-import com.example.ParkingS.repository.{CurrencyRepository, TicketRepository}
+import com.example.ParkingS.repository.{CurrencyFakeRepository, TicketFakeRepository}
 import com.example.ParkingS.requests.{BeginParkingRequest, EndParkingRequest}
 import com.example.ParkingS.responses.{BeginParkingResponse, EndParkingResponse, ErrorResponse}
 import com.example.ParkingS.service.price.PriceCalculator
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation._
 
 @RestController
 @RequestMapping(Array("/driver"))
-class DriverController @Autowired()(private val ticketRepository: TicketRepository,
-                                    private val currencyRepository: CurrencyRepository,
+class DriverController @Autowired()(private val ticketRepository: TicketFakeRepository,
+                                    private val currencyRepository: CurrencyFakeRepository,
                                     private val priceCalculator: PriceCalculator) {
     
     @PostMapping(Array("/start"))
